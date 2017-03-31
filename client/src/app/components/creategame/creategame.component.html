@@ -1,0 +1,12 @@
+<h3>Create Game</h3>
+Game Name : <input class="form-control" [(ngModel)]="game.name" placeholder="name" />
+<br/>
+<button type="button" (click)="createGame()">Create Game</button>
+
+<h4>Running Games</h4>
+
+<ul class="list-group">
+    <li *ngFor="let game of games" class="list-group-item" (click)="joinGame(game.id)">
+        {{ game.name }}
+    </li>
+</ul>

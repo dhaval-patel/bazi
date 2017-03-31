@@ -1,0 +1,16 @@
+<h3>Player Game :: <span *ngIf="game">{{game.name}}</span></h3>
+
+<h4>Connected Players</h4>
+
+<ul class="list-group">
+    <li *ngFor="let player of game?.players" class="list-group-item">
+        {{ player.name }}
+        <ul>
+            <li *ngFor="let card of player.cards">
+                {{card.rank}} {{ card.suit }}
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<button type="button" (click)="startHand()">Start Hand</button>
